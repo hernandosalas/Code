@@ -1,3 +1,6 @@
 venv/ 
 .vscode/
-Colombia Covid Dashboard/Casos_positivos_de_COVID-19_en_Colombia.csv
+*.env
+*.csv
+*.mp3
+*.wav
