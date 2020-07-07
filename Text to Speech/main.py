@@ -43,7 +43,7 @@ def transcribe_audio_with_watson(path_to_audio_file):
     speech_to_text = SpeechToTextV1(
         authenticator=authenticator
     )
-    speech_to_text.set_service_url('https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/95d644d3-b2ef-45af-ab35-9141316985ac')
+    speech_to_text.set_service_url(os.getenv(SPEECH_TO_TEXT_URL))
 
     with open(join(dirname(__file__), path_to_audio_file), 'rb') as audio_file:
         response = speech_to_text.recognize(audio_file, content_type='audio/wav', model='en-US_NarrowbandModel').get_result()
