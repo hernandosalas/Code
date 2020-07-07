@@ -2,7 +2,10 @@
 # Python Code Tutorials
 This is a repository of all the tutorials.
 ## List of Tutorials
+- ### Various
+
 - ### [Ethical Hacking](https://www.thepythoncode.com/topic/ethical-hacking)
+    - [Web app using Streamlit](Web%20app%20using%20Streamlit).
     -  ### [Scapy](https://www.thepythoncode.com/topic/scapy)
         - [Getting Started With Scapy: Python Network Manipulation Tool](https://www.thepythoncode.com/article/getting-started-with-scapy)
 
