@@ -20,6 +20,8 @@ import dash_html_components as html
 import dash_bootstrap_components as dbc
 import plotly.graph_objects as go
 from dash.dependencies import Input, Output, State
+import pandas as pd
+from sodapy import Socrata
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -65,45 +67,56 @@ cards = html.Div([row_1, row_2, row_3])
 
 app.layout = html.Div([cards])
 
-if __name__ == "__main__":
-    # app.run_server()
 
-
+def accessDataViaCSV():
     url="https://www.datos.gov.co/api/views/gt2j-8ykr/rows.csv?accessType=DOWNLOAD&api_foundry=true"
+    # url="Casos_positivos_de_COVID-19_en_Colombia.csv"
     df = pd.read_csv(url)
+
+    # Print columns
+    print(list(df.columns))
+
     # Preview the first 5 lines of the loaded data 
     index = df.index
     number_of_rows = len(index)
     print(f"Casos Confirmados = {number_of_rows}")
 
-    df_recuperados = df[df["Estado"] == "Recuperado"]
+    df_recuperados = df[df["atención"] == "Recuperado"]
     print(f"Recuperados = {len(df_recuperados.index)}")
 
     df_fallecidos = df[df["Estado"] == "Fallecido"]
     print(f"Fallecidos = {len(df_fallecidos.index)}")
 
+def accessDataViaSocrata():
+    # Unauthenticated client only works with public data sets. Note 'None'
+    # in place of application token, and no username or password:
+    client = Socrata("www.datos.gov.co", None)
 
+    # Example authenticated client (needed for non-public datasets):
+    # client = Socrata(www.datos.gov.co,
+    #                  MyAppToken,
+    #                  userame="user@example.com",
+    #                  password="AFakePassword")
 
+    # First 2000 results, returned as JSON from API / converted to Python list of
+    # dictionaries by sodapy.
+    results = client.get("gt2j-8ykr", limit=200000)
 
+    # Convert to pandas DataFrame
+    results_df = pd.DataFrame.from_records(results)
 
-    # import pandas as pd
-    # from sodapy import Socrata
+    df = results_df
 
-    # # Unauthenticated client only works with public data sets. Note 'None'
-    # # in place of application token, and no username or password:
-    # client = Socrata("www.datos.gov.co", None)
+    index = df.index
+    number_of_rows = len(index)
+    print(f"Casos Confirmados = {number_of_rows}")
 
-    # # Example authenticated client (needed for non-public datasets):
-    # # client = Socrata(www.datos.gov.co,
-    # #                  MyAppToken,
-    # #                  userame="user@example.com",
-    # #                  password="AFakePassword")
+    df_recuperados = df[df["atenci_n"] == "Recuperado"]
+    print(f"Recuperados = {len(df_recuperados.index)}")
 
-    # # First 2000 results, returned as JSON from API / converted to Python list of
-    # # dictionaries by sodapy.
-    # results = client.get("gt2j-8ykr", limit=50)
+    df_fallecidos = df[df["estado"] == "Fallecido"]
+    print(f"Fallecidos = {len(df_fallecidos.index)}")
 
-    # # Convert to pandas DataFrame
-    # results_df = pd.DataFrame.from_records(results)
-
-    # print(results_df["departamento"])
+if __name__ == "__main__":
+    # app.run_server()
+    accessDataViaSocrata()
