@@ -5,3 +5,5 @@ venv/
 *.mp3
 *.wav
 *.exe
+__pycache__/
+dataset/
