@@ -4,6 +4,7 @@
 
 ## Snippets
 - [Machine Learning](Machine%20Learning/Snippets.ipynb)
+- [Python](Python%20Notes.md)
 
 
 This is a repository of all the tutorials.
