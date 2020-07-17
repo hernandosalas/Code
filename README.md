@@ -1,5 +1,11 @@
 ![alt text](images/python_logo.ico) 
 # Python Code Tutorials
+
+
+## Snippets
+- [Machine Learning](Machine%20Learning/Snippets.ipynb)
+
+
 This is a repository of all the tutorials.
 ## List of Tutorials
 - ### Various
