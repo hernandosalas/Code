@@ -1,9 +1,14 @@
-venv/ 
-.vscode/
-*.env
-*.csv
-*.mp3
-*.wav
-*.exe
-__pycache__/
-dataset/
+Colombia Covid Dashboard/Casos_positivos_de_COVID-19_en_Colombia.csv
+**/build/
+**/dist/
+**/__pycache__/
+**/venv/
+**/*.pdf
+**/*.xlsx
+**/*.mp3
+**/*.wav
+**/*.spec
+**/*.lock
+**/Pipfile
+**/env/
+**/.vscode/

@@ -1,0 +1,38 @@
+#VENV
+python -m venv env
+.\env\Scripts\activate.bat
+pip install PyPDF2 pandas pyinstaller
+
+
+
+#PIPENV
+pipenv shell
+pipenv install PyPDF2 pandas pyinstaller openpyxl
+
+
+pyinstaller.exe --clean --onedir --name PDF_Extractor extractor.py --noconfirm
+pyinstaller.exe --clean --onedir --name PDF_Extractor PDF_Extractor.spec --noconfirm
+
+pyinstaller.exe --clean --onefile --name PDF_Extractor extractor.py --noconfirm
+pyinstaller.exe --clean --onefile --name PDF_Extractor PDF_Extractor.spec --noconfirm
+
+
+
+#EXCLUDES EXAMPLE
+pyinstaller.exe --clean --onedir --name PDF_Extractor extractor.py --exclude-module matplotlib --exclude-module scipy --exclude-module setuptools --exclude-module hook --exclude-module distutils --exclude-module site --exclude-module hooks --exclude-module tornado --exclude-module PIL --exclude-module PyQt4 --exclude-module PyQt5 --exclude-module pydoc --exclude-module pythoncom --exclude-module pytz --exclude-module pywintypes --exclude-module sqlite3 --exclude-module pyz --exclude-module sklearn --exclude-module scapy --exclude-module scrapy --exclude-module sympy --exclude-module kivy --exclude-module pyramid --exclude-module opencv --exclude-module tensorflow --exclude-module pipenv --exclude-module pattern --exclude-module mechanize --exclude-module beautifulsoup4 --exclude-module requests --exclude-module wxPython --exclude-module pygi --exclude-module pillow --exclude-module pygame 
+--exclude-module pyglet --exclude-module flask --exclude-module django --exclude-module pylint --exclude-module pytube --exclude-module odfpy --exclude-module mccabe --exclude-module pilkit --exclude-module six --exclude-module wrapt --exclude-module astroid --exclude-module isort
+
+
+# Step 2 : Creating the installer file
+(https://medium.com/@mounirboulwafa/creating-a-single-executable-file-exe-from-a-python-program-abda6a41f74f)
+
+Download NSIS INSTALLER
+https://nsis.sourceforge.io/Download
+C:\Program Files (x86)\NSIS
+
+First, create a ZIP file of all the necessary files (the executable file, dependencies, etc.).
+Then, Run NSIS, and chose: Installer based on .ZIP file.
+    - Select the ZIP file.
+    - Provide a name.
+    - Set the installation directory (e.g. Program Files\myApp).
+    - Generate the setup.exe file.
