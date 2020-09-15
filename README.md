@@ -10,6 +10,15 @@
 - [Machine Learning](Machine%20Learning/Snippets.ipynb)
 
 
+## Projects
+- [Amz Search](Amz%20Search/)
+
+
+
+
+
+
+
 
 This is a repository of all the tutorials.
 ## List of Tutorials
