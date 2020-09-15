@@ -1,10 +1,14 @@
 ![alt text](images/python_logo.ico) 
+
+# Python Notes
+- [Python](Python%20Notes.md)
+
 # Python Code Tutorials
 
 
 ## Snippets
 - [Machine Learning](Machine%20Learning/Snippets.ipynb)
-- [Python](Python%20Notes.md)
+
 
 
 This is a repository of all the tutorials.
