@@ -1,0 +1,7 @@
+INSTRUCTIONS
+
+1 - Create new folder
+2 - Copy PDF_Extractor.exe into folder created in step#1
+3 - Copy desired pdfs into folder created in step#1
+4 - Run PDF_Extractor.exe as administrator (via right-click)
+5 - total.xlsx file will be generated will all the results
