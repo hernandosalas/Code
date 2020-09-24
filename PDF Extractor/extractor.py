@@ -4,7 +4,7 @@ import pandas as pd
 import glob, os
 import sys 
 
-
+total_records = 0
 
 def write_csv(input,page_num):
     with open(path[:-4]+'_'+str(page_num)+'.csv', 'w', newline='') as file:
@@ -12,6 +12,7 @@ def write_csv(input,page_num):
         writer.writerow([input])
 
 def extract_text_from_pdf(generate_csv):
+    global total_records
     with open(path, 'rb') as f:
         pdf = PdfFileReader(f)
 
@@ -134,6 +135,7 @@ def extract_text_from_pdf(generate_csv):
             print()
             print(f"Number of records in page {page_num}: {records}")
             print()
+            total_records += records
             
         df = pd.DataFrame(business, columns = ['License Number','Business Name','Owner Name','License Type','Service Address','Mailing Address','Issue Date'])
         # df.to_excel (path[:-4]+'_'+str(page_num)+'.xlsx', index = False, header=True)
@@ -216,6 +218,7 @@ print("///////////////////////////////////////////////")
 print()
 print("***********************************************")
 print("Results total.xlsx generated")
+print(f"Total records processed: {total_records}")
 join_xlsx()
 delete_all_xlsx_except_total()
 
