@@ -5,3 +5,6 @@ INSTRUCTIONS
 3 - Copy desired pdfs into folder created in step#1
 4 - Run PDF_Extractor.exe as administrator (via right-click)
 5 - total.xlsx file will be generated will all the results
+
+Chromedriver is needed
+Tor Browser is needed

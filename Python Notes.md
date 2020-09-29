@@ -50,11 +50,18 @@ Avoid abbreviations and especially single letters
 ##### Code Review
 
 - Is the code clean and modular? Look for duplication, whitespaces, readability and modularity
+
 - Is the code efficient? Look at loops, objects, functions structure, can it use multiprocessing?
+
 - Is documentation effective? Look for in-line comments, docstrings and readme files
+
 - Has the code been tested? Look for unit tests
+
 - Is the logging good enough? Look for clarity and right frequency of logging message
 
+### PYTHON BOOKS
+
+Python Books You Must Read in 2020 - https://towardsdatascience.com/python-books-you-must-read-in-2020-a0fc33798bb
 
 ### PYTHON LIBRARIES
 
@@ -1268,6 +1275,33 @@ print(sorted(zipped_1))
 zipped_2 = zip(stocks.keys(), stocks.values())
 print(sorted(zipped_2))
 # [('AMZN', 306.21), ('APPL', 99.76), ('FB', 76.45), ('Goog', 520.54), ('yhoo', 39.28)]
+
+# Create a dict object from tuples
+dict_tuples = dict([("a", 0), ("b", 1), ("c", 2)])
+print(dict_tuples) # {'a': 0, 'b': 1, 'c': 2}
+
+# Create a dict object from two iterables
+dict_keys = ["a", "b", "c"]
+dict_values = [0, 1, 2]
+dict_zipped = dict(zip(dict_keys, dict_values))
+print(dict_zipped) # {'a': 0, 'b': 1, 'c': 2}
+
+# Create a dict object from key-value assignments
+dict_assigned = dict(a=0, b=1, c=2)
+print(dict_assigned) # {'a': 0, 'b': 1, 'c': 2}
+
+# Use dictionary comprehension
+squares = {x: x*x for x in range(5)}
+print(squares) # {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+
+# Create a list of integers used in a dict comprehension
+integers = [1, 2, 3, 4, 5]
+odds_squares = {x: x*x for x in integers if x%2 == 1}
+print(odds_squares) # {1: 1, 3: 9, 5: 25}
+
+# Use the get() method
+student_id = student.get("student_id", -1)
+print(student_id) # 73802
 
 ```
 
@@ -2771,154 +2805,405 @@ $ pip install ptpython
 $ ptpython
 
 ```
-###### TEMPLATE
+###### Using Try Except Finally
 ```python
+answer = input()
+try:
+    answer = 111/int(answer)
+except:
+    print("Error, please check your input and use a positive number")
+else:
+    print("The answer is", answer)
+finally:
+    print("That's all folks!")
+```
+
+###### Using Suppress
+```python
+from contextlib import suppress
+
+result = 0
+for num in nums:
+    with suppress(ZeroDivisionError):
+        result += 1/num
+print(result)
+```
+
+###### Transpose a matrix
+```python
+mat=[(5,6,7),(8,9,10),(11,12,13),(14,15,16)] 
+for row in mat: 
+ print(row) 
+print("\n") 
+t_mat = zip(*mat) 
+for row in t_mat: 
+ print(row)
+output
+#BEFORE
+(5, 6, 7)
+(8, 9, 10)
+(11, 12, 13)
+(14, 15, 16)
+
+#AFTER
+(5, 8, 11, 14)
+(6, 9, 12, 15)
+(7, 10, 13, 16)
+```
+
+###### Digitize (convert number into list of numbers)
+```python
+number = 2468
+
+# with map
+digit_list = list(map(int, str(number)))
+print(digit_list) # [2, 4, 6, 8]
+
+# with list comprehension
+digit_list = [int(a) for a in str(number)]
+print(digit_list) # [2, 4, 6, 8]
+
+# Even simpler approach
+digit_list = list(str(number))
+print(digit_list) #[2, 4, 6, 8]
+```
+
+###### Incorporate a true Python switch-case statement
+```python
+def aswitch(a): 
+	return aswitch._system_dic.get(a, None)
+aswitch._system_dic = {'mangoes': 4, 'apples': 6, 'oranges': 8}
+print(aswitch('default')) # None
+print(aswitch('oranges')) # 8
+```
+
+###### With splat operator unpacking function arguments
+```python
+def test(a, b, c):
+	print(p, q, r)
+test_Dic = {'a': 4, 'b': 5, 'c': 6} 
+test_List = [10, 11, 12]
+test(*test_Dic) # p q r
+test(**test_Dic) # 4 5 6
+test(*test_List) # 10 11 12
+```
+###### Factory Method
+```python
+class Bicycle:
+    def __init__(self):
+        self.tires = self.add_tires()
+    def add_tires(self):
+        return GenericTires()
+    def get_tire_type(self):
+        return self.tires.tire_type()
+
+class MountainBike(Bicycle):
+    def add_tires(self):
+        return MountainTires()
+
+class GenericTires:
+    def tire_type(self):
+        return 'generic'
+
+class MountainTires:
+    def tire_type(self):
+        return 'mountain'
+
+mountain_bike = MountainBike()
+print(mountain_bike.get_tire_type())
+```
+
+###### Underscore
+```python
+for _ in range(3):
+	print('Hello')
+
+#Hello
+#Hello
+#Hello
+```
+
+###### Comparison of two sets
+```python
+
+a = {1,2,3}
+b = {1,2,3,4,5}
+
+# Is a a subset of b?
+print(a<=b) # True
+
+# Is a a superset of b?
+print(a>=b) # False
+
+# Union of a and b 
+print(a.union(b)) # {1, 2, 3, 4, 5}
+
+# Intersection of a and b 
+print(a.intersection(b)) # {1, 2, 3}
+
+# Difference 
+# Return elements in a but not in b 
+print(a.difference(b)) # set()
+# Return elements in b but not in a
+print(b.difference(a)) # {4, 5}
+```
+
+###### Dunders: __var
+```python
+#A double underscore prefix can be used in Python to avoid naming conflicts in subclasses.
+
+Class Pubber:
+  def __init__(self):
+    self.name = 'Bond, James'
+    self._age = 33
+    self.__address = 'Mars' #double underscore prefix
+```
+
+###### Single Trailing Underscore: var_
+```python
+#What if you need to use a keyword for a name? Append a single trailing underscore (postfix) after variable, function, or Class names, and you’re good to go! It avoids naming conflicts with Python keywords.
+
+Class class: #SyntaxError: "invalid syntax"
+Class class_ #No problem
+```
+
+###### Single Leading Underscore:_var
+```python
+#To indicate that a variable is meant for internal use, a single leading underscore (prefix) is used before the variable name.
+
+Class Pubber:
+  def __init__(self):
+    self.name = 'Bond, James'
+    self._age = 33 #private variable, shhh...
+    
+  def _menu_tonight(): #private function
+    something_special
+
+```
+###### Unpacking
+```python
+a, b, c = (1, 2, 3)
+# a = 1 b= 2 c=3
+a, *b, c = (1, 2, 3, 4, 5, 6)
+# a = 1 b= 2, 3, 4, 5 c=6
+```
+
+###### Getter and Setter Python way
+```python
+class Person:
+     @property
+     def name(self):
+             return self.__name
+     @name.setter
+     def name(self, value):
+             self.__name = value
+ 
+person = Person()
+person.name = 'Juan'
+print(person.name) # 'Juan'
+```
+
+###### Use context manager with open
+```python
+with open("test_file","w+") as file:
+    file.write("a new line")
+```
+
+###### Using Reduce Function
+```python
+# reduce(function, iterable[, initializer])
+from functools import reduce
+
+num_list = [1,2,3,4,5]
+def prod(x, y):
+    return x * y
+
+product = reduce(prod, num_list)
+print(product) # 120
 
 ```
 
-###### TEMPLATE
+###### Byte String Modifier
 ```python
+#  By placing the letter b at the beginning of a string, it’ll be converted to ASCII. 
+sys.getsizeof("hello world")  # 96
+sys.getsizeof(b"hello world") # 48
+```
+
+###### Raw String Modifier
+```python
+print("hello\nworld")
+"""
+hello
+world
+"""
+print(r"hello\nworld")
+"""
+hello\nworld
+"""
+```
+
+###### How to import Excel files in Python
+```python
+import pandas as pd
+
+"""Option One""""
+
+# Load file as an ExcelFile object
+excel = pd.ExcelFile('financial_sample.xlsx')
+# Print out the sheet names
+print(excel.sheet_names) # Prints out 'Sheet1' and 'Sheet2'
+
+# Load the two sheets as individual DataFrames
+df1 = excel.parse('Sheet1')
+df2 = excel.parse(1)
+
+"""Option Two"""
+excel = pd.read_excel('financial_sample.xlsx', sheet_name='Sheet1')  # Or sheet_name=0
+```
+
+###### How to import MATLAB files in Python
+```python
+# Importing matlab files
+import scipy.io
+import pandas as pd
+
+filename = "ja_data2.mat"
+
+matlab = scipy.io.loadmat(filename)
+
+print(type(matlab)) # prints out 'class <dict>'
+
+# Saving DataFrames as MATLAB files
+# Read any csv file
+df = pd.read_csv('sample.csv')
+# Rename DataFrame columns to suit them into MATLAB's file structures
+df.rename(columns=lambda x: 'col_' + x.replace(' ', '_'), inplace=True)
+scipy.io.savemat('new_matlab_name.mat', {'struct': df.to_dict('list')})
+```
+
+###### How to import SAS files in Python
+```python
+from sas7bdat import SAS7BDAT
+import pandas as pd
+
+with SAS7BDAT('skinproduct.sas7bdat') as file:
+    sas_df = file.to_data_frame()
+
+print(sas_df)
+```
+
+###### How to import Stata files in Python
+```python
+# Importing a stata file
+import pandas as pd
+
+dta = pd.read_stata('cola.dta')
+
+print(dta)
+# Saving as a stata file
+# Read any csv file or any DataFrame
+df = pd.read_csv('sample.csv')
+# Save as .dta file
+df.to_stata('sample.dta')
+```
+
+###### How to import HDF5 files in Python
+```python
+import h5py
+
+filename = 'ligo_data.hdf5'
+
+data = h5py.File(filename, 'r')
+print(data.keys())
+# Values for each group can be accessed like this
+print(data['meta'].value)
+```
+
+###### How to import Pickle files in Python
+```python
+import pickle
+
+with open('pickle_file.pkl', 'rb') as file:
+    data = pickle.load(file)
+
+print(data)
+
+num_list = [range(1000000)]
+# How to save a Python object to a pickle file
+with open('new_pickle.pkl', 'wb') as file:
+    pickle.dump(num_list, file)
+```
+
+###### How to download files from the web
+```python
+import requests
+
+url = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+
+def download(url):
+    # Send a request to the given url
+    response = requests.get(url, allow_redirects=True)
+    # Extract the file extension
+    extension = url.split('.')[-1]
+    # Save the file locally
+    with open(f'new_file.{extension}', 'wb') as file:
+        file.write(response.content)
+
+download(url)
+```
+
+###### Ternary Expression
+```python
+# The typical way
+if score > 90:
+    reward = "1000 dollars"
+else:
+    reward = "500 dollars"
+    
+# Do this instead
+reward = "1000 dollars" if score > 90 else "500 dollars"
+```
+
+###### Create length-N lists quickly
+```python
+four_nones = [None] * 4
+four_nones # [None, None, None, None]
+
+four_lists = [[] for __ in range(4)]
+four_lists #[[], [], [], []]
+```
+
+###### Deleting elements of lists
+```python
+a = ['foo', 'foo', 'bar', 'bar']
+foos = [value for value in a if value != 'bar']
+foos # ['foo', 'foo']
 
 ```
 
-###### TEMPLATE
+###### Raise not implemented
 ```python
-
+def implementtest(num):
+    if num == 5:
+        raise(NotImplemented)
+    if num == 10:
+        raise(NotImplementedError('This is the right way!'))
 ```
-
-###### TEMPLATE
+###### Walrus operator
 ```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-###### TEMPLATE
-```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-###### TEMPLATE
-```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-###### TEMPLATE
-```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-###### TEMPLATE
-```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-
-###### TEMPLATE
-```python
-
-```
-###### TEMPLATE
-```python
-
+ # Instead of doing this:
+ account_number = get_account("123-45-6789")
+ if account_number:
+     withdraw_money(account_number)
+ else:
+     found_no_account()
+ 
+ # The idiomatic way:
+ if account_number := get_account("123-45-6789"):
+     withdraw_money(account_number)
+ else:
+     found_no_account()
 ```
 
 ###### TEMPLATE
