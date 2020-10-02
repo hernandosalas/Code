@@ -1,11 +1,110 @@
 # PYTHON 
 
+### PYTHON REFERENCES
+How to Think Like a Computer Scientist: Interactive Edition - https://runestone.academy/runestone/books/published/thinkcspy/index.html
+The Ultimate Python Beginner's Handbook - https://www.freecodecamp.org/news/the-python-guide-for-beginners/
+A Byte of Python - https://python.swaroopch.com/
+Slither Into Python - https://www.slitherintopython.com/?utm_medium=ios_app&utm_name=iossmf&utm_source=share
+Python for Developers - http://ricardoduarte.github.io/python-for-developers/
+The Ultimate Guide to Python: How to Go From Beginner to Pro - https://www.freecodecamp.org/news/the-ultimate-guide-to-python-from-beginner-to-intermediate-to-pro/
+Full Stack Python - https://www.fullstackpython.com/table-of-contents.html
+Python Resources - https://github.com/learnbyexample/scripting_course/blob/master/Python_curated_resources.md
+python-tutorials - https://github.com/feiskyer/python-tutorials/blob/master/README.md
+A gallery of interesting Jupyter Notebooks - https://github.com/jupyter/jupyter/wiki/A-gallery-of-interesting-Jupyter-Notebooks
+Slides for Programming Courses - https://marko-knoebl.github.io/slides/
+Python function reference - https://www.bitdegree.org/learn/python
+The Top 7 Best Github Repositories to Learn Python - https://towardsdatascience.com/top-7-repositories-on-github-to-learn-python-44a3a7accb44
+Machine Learning India - https://www.linkedin.com/posts/mlindia_google-search-with-python-activity-6706841645951844352-aPfe/
+Ultimate Python study guide - https://github.com/huangsam/ultimate-python
+
+### PYTHON OTHER RESOURCES
+
+A Guide to Object Oriented Programming with Python - https://towardsdatascience.com/a-quick-guide-on-object-oriented-programming-with-python-bcff043fee38
+An Essential Guide on Python for Beginners - https://towardsdatascience.com/a-complete-walk-through-in-python-93f9e413ebdf
+Intermediate Python Refresher: Tutorial, Project Ideas, and Tips - https://hackernoon.com/intermediate-python-refresher-tutorial-project-ideas-and-tips-i28s320p
+Everything you Should Know About Data Structures in Python - https://www.analyticsvidhya.com/blog/2020/06/data-structures-python/
+Fast Python - https://github.com/chrisconlan/fast-python
+Pentesting-notes - https://github.com/sourtimez/Pentesting-notes
+Timing for Efficient Python Code - https://towardsdatascience.com/timing-the-performance-to-choose-the-right-python-object-for-your-data-science-project-670db6f11b8e
+Python programming concepts that made my code efficient! - https://towardsdatascience.com/python-programming-concepts-that-made-my-code-efficient-68f92f8a39d0
+
+
+### PYTHON STYLE
+
+A Summary of PEP 8 - Style Guide for Python Code - https://tandysony.com/2018/02/14/pep-8.html
+PEP 8 — the Style Guide for Python Code - https://pep8.org/#introduction
+Google Python Style Guide - https://google.github.io/styleguide/pyguide.html
+clean-code-python - https://github.com/zedr/clean-code-python/blob/master/README.md
+
+### PYTHON STRUCTURE PROJECT
+Hypermodern Python - https://cjolowicz.github.io/posts/hypermodern-python-01-setup/
+Structuring Your Project - https://docs.python-guide.org/writing/structure/
+A sample Python project - https://github.com/pypa/sampleproject
+
+### PYTHON CHEATSHEETS
+Python cheatsheet - https://devhints.io/python
+Welcome to Python Cheatsheet - https://www.pythonsheets.com/
+Comprehensive Python Cheatsheet - https://github.com/gto76/python-cheatsheet
+Comprehensive Python Cheat Sheet for Beginners - https://medium.com/the-codehub/comprehensive-python-cheat-sheet-for-beginners-5d76bb038fa2
+Python Cheatsheet - https://cheatsheets.tutorials24x7.com/programming/python
+Python Cheatsheet 2 - https://overapi.com/python
+String Reference Cheat Sheet For Python - https://medium.com/analytics-vidhya/string-reference-cheat-sheet-for-python-ce4958235ad5
+Shortcuts for Data Science - https://365datascience.com/wp-content/uploads/2020/01/Shortcuts-for-Data-Scientists-2020.pdf
+Python For Data Science Cheat Sheet - https://assets.datacamp.com/blog_assets/PandasPythonForDataScience.pdf
+
+### PYTHON BOOKS
+
+Python Books You Must Read in 2020 - https://towardsdatascience.com/python-books-you-must-read-in-2020-a0fc33798bb
+The 25 best Python books of all time - https://www.best-books.dev/list/best-python-books
+5 Excellent Books to Learn Python in 2020 - https://levelup.gitconnected.com/5-excellent-books-to-learn-python-in-2020-768614974ecc
+
 ### PYTHON INTERVIEW
 
 ###### TEMPLATE
 ```python
 
 ```
+
+### PYTHON TRICKS
+
+10 Quick Clean Coding Hacks in Python
+https://towardsdatascience.com/10-quick-and-clean-coding-hacks-in-python-1ccb16aa571b?gi=cf3526425c54
+1. Do your co-developer a favor and use docstrings - Use “““Triple double quotes””” to write docstrings that clearly explain the purpose of your function, module and the script in all, even if you are commenting it otherwise. Remember to end your docstrings with a period.
+2. Make your logic statements intuitive to read
+3. Use .join instead of + to perform string concatenation
+4. Use List Comprehension for readable for loops
+5. If you are assigning a value to a variable, use def functions instead of lambda - Save the lambda functions for calculation inside of expressions.
+6. Break those long lines - Pay attention to the text wrap line. Stay Inside your wrap line on the editor.
+7. Use range instead of a list where possible
+8. Keep a minimum amount of code under Try blocks
+9. Use sets a little more than you already do - Sets offer performance over functionality. If you don’t need a lot of functionality in the current situation, prefer sets to other data structures.
+10. use zip to iterate over multiple lists
+
+
+10 Idiomatic Ways to Refactor Your Python Code
+https://towardsdatascience.com/10-idiotic-ways-to-refactor-your-python-code-cbb05bb0c820
+1. Comprehensions
+2. F-Strings
+3. Multiple Assignment and Tuple Unpacking
+4. Catch-All Unpacking
+5. Assignment Expression(walrus operator) - As indicated by its name, assignment expression allows you to assign a value to a variable and in the meantime, it can be used as an expression, such as in an if statement.
+6. Iteration with enumerate
+7. Join Iterables With zip/zip_longest
+8. Concatenate Iterables
+9. Ternary Expression
+10. Use of Generators -  the generator yields the next value when it’s asked to do so, which is very memory efficient.
+
+The ultimate guide to writing better Python code
+https://towardsdatascience.com/the-ultimate-guide-to-writing-better-python-code-1362a1209e5a
+1. Avoid string hiccups with f-strings
+2. Use list comprehensions - new_list = [expression for item in iterable (if conditional)]
+3. Create length-N lists quickly - four_nones = [None] * 4 - four_lists = [[] for __ in range(4)]
+4. Automate opening and closing files - >>> with open('file.txt') as f:  >>>     for line in f: >>>         print line
+5. Use help() before heading to StackOverflow - help(mynewfunction)
+6. Use dir() to learn about attributes and methods
+7. Optimize your memory with getsizeof() - sys.getsizeof(x)
+8. Making documentation easier - Choose your docstring style and keep to it, Version your code, Git it regularly, Keep a change log, Use long and descriptive variable names, Use PEP 8, Comment well
+9. Adopting good habits - Make line continuations more stable, Don’t write spaghetti code, Only use one statement per line, Use type hinting
 
 ### PYTHON TIPS
 
@@ -59,9 +158,7 @@ Avoid abbreviations and especially single letters
 
 - Is the logging good enough? Look for clarity and right frequency of logging message
 
-### PYTHON BOOKS
 
-Python Books You Must Read in 2020 - https://towardsdatascience.com/python-books-you-must-read-in-2020-a0fc33798bb
 
 ### PYTHON LIBRARIES
 
