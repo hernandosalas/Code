@@ -1,5 +1,5 @@
 '''
-Memento Design Pattern
+Structural - Memento - Design Pattern
 [https://www.oodesign.com/images/design_patterns/structural/memento-design-pattern-implementation-uml-class-diagram.png]
 
 
