@@ -6,10 +6,12 @@ Colombia Covid Dashboard/Casos_positivos_de_COVID-19_en_Colombia.csv
 **/*.pdf
 **/*.xlsx
 **/*.mp3
+**/*.mp4
 **/*.wav
 **/*.spec
 **/*.lock
 **/*.jpg
+**/*.pptx
 **/*.db
 **/Pipfile
 **/env/
