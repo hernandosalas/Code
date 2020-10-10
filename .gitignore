@@ -13,7 +13,9 @@ Colombia Covid Dashboard/Casos_positivos_de_COVID-19_en_Colombia.csv
 **/*.jpg
 **/*.pptx
 **/*.db
+**/*.ini
 **/Pipfile
 **/env/
 **/.vscode/
 Machine Learning/ML_India/.google-cookie
+
